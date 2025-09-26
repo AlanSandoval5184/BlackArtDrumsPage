@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tambores Artesanales | Tamboras & Ritmo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" id="home">
+    <div class="nav-wrapper">
+      <div class="brand" aria-label="Logo Tamboras">
+        <div class="logo-icon" aria-hidden="true"><img src="images/logo.png" alt="Logo" width="40"></div>
+        <h1>Black Art Drums</h1>
+      </div>
+      <nav class="main-nav">
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+        <button class="btn-ghost" id="btn-cart" aria-label="Abrir carrito">Carrito (<span id="cart-count">0</span>)</button>
+      </nav>
+      <button class="hamburger" aria-label="Abrir menú" id="btn-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h2 class="hero-title">Tambores artesanales con sonido auténtico</h2>
+        <p class="hero-sub">Hechos a mano por artesanos con maderas y pieles seleccionadas. Calidad para músicos exigentes.</p>
+        <div class="hero-cta">
+          <a href="#productos" class="btn-primary">Ver productos</a>
+          <a href="#contacto" class="btn-ghost">Cotiza tu tambora</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+  <!-- Video con id para controlarlo -->
+        <video id="hero-video" controls autoplay muted>
+          <source src="images/Video de WhatsApp 2025-09-17 a las 14.01.24_ac34b8a2.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+
+      <script>
+        const video = document.getElementById("hero-video");
+
+        // Lista de videos a reproducir en orden
+        const listaVideos = [
+          "images/Video de WhatsApp 2025-09-17 a las 14.01.24_ac34b8a2.mp4",
+          "images/Video de WhatsApp 2025-09-25 a las 19.07.14_fa872f58.mp4"
+
+        ];
+
+        let indice = 0;
+
+        video.addEventListener("ended", () => {
+          indice++;
+          if (indice < listaVideos.length) {
+            video.src = listaVideos[indice];
+            video.play();
+          } else {
+            // 👉 Si quieres que vuelva al primero, descomenta esto:
+            indice = 0;
+            video.src = listaVideos[indice];
+            video.play();
+          }
+        });
+      </script>
+    </div>
+
+    <a href="#productos" class="scroll-down" aria-hidden="true">▼</a>
+  </header>
+
+  <main>
+    <!-- Productos -->
+    <section id="productos" class="section products-section">
+      <div class="container">
+        <h2 class="section-title">Nuestros Tamboras</h2>
+        <p class="section-desc">Modelos para grupos, estudio y colección. Personalizamos tamaño, acabado y afinación.</p>
+
+        <div class="products-grid" id="products-grid">
+          <!-- producto 1 -->
+          <article class="product-card" data-id="1" data-name="Tambora Clásica" data-price="4500">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-05-19 a las 14.51.14_d6a35b1d.jpg" alt="Tambora Clásica"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora Clásica</h3>
+              <p class="price">MXN $4,500</p>
+              <p class="meta">Diámetro 14", madera de cedro, parche natural.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- producto 2 -->
+          <article class="product-card" data-id="2" data-name="Tambora Pro" data-price="8200">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-05-19 a las 14.51.46_cbf7c7f0.jpg" alt="Tambora Pro"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora Pro</h3>
+              <p class="price">MXN $8,200</p>
+              <p class="meta">Diámetro 16", refuerzos metálicos, tono profundo.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- producto 3 -->
+          <article class="product-card" data-id="3" data-name="Tambora Boutique" data-price="12500">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-05-19 a las 14.51.48_38a837b9.jpg" alt="Tambora Boutique"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora Boutique</h3>
+              <p class="price">MXN $12,500</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="4" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-17 a las 14.01.26_d58115ee.jpg" alt="Tambora verde"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="5" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-18 a las 12.19.02_67f23778.jpg" alt="Tambora mexico 2"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora Mexico</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-17 a las 20.03.13_5640d13b.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.48.50_660c04c9.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.50.04_23994b28.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.50.05_483f9e43.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.50.06_3dbfe30e.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.52.28_b207dc32.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.52.30_bbfd4ad6.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.52.34_8313dec4.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-20 a las 19.52.34_ed39deb6.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="6" data-name="Tambora verde" data-price="15000">
+            <div class="product-media">
+              <img src="images/Imagen de WhatsApp 2025-09-25 a las 19.07.30_c076a8ba.jpg" alt="Tambora verdeAmarillo"/>
+            </div>
+            <div class="product-body">
+              <h3>Tambora verde/Amarillo</h3>
+              <p class="price">MXN $15,000</p>
+              <p class="meta">Edición limitada, incrustaciones, afinación profesional.</p>
+              <div class="card-actions">
+                <button class="btn-small add-to-cart">Añadir al carrito</button>
+                <button class="btn-link view-more">Ver más</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería / Carrusel -->
+    <section id="galeria" class="section gallery-section">
+      <div class="container">
+        <h2 class="section-title">Galería</h2>
+        <p class="section-desc">Detalles, texturas y presentaciones en escenarios reales.</p>
+
+        <div class="carousel" id="carousel" aria-roledescription="carousel">
+          <button class="carousel-btn prev" id="carousel-prev" aria-label="Anterior">‹</button>
+          <div class="carousel-track" id="carousel-track">
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-05-19 a las 14.51.14_d6a35b1d.jpg" alt="Detalle del tambor 1"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-05-19 a las 14.51.46_cbf7c7f0.jpg" alt="Detalle del tambor 2"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-05-19 a las 14.51.48_38a837b9.jpg" alt="Detalle del tambor 3"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-05-19 a las 14.51.48_f202fb03.jpg" alt="Detalle del tambor 4"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-17 a las 14.01.26_d58115ee.jpg" alt="Detalle del tambor 5"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-18 a las 12.19.02_67f23778.jpg" alt="Detalle del tambor 6"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-17 a las 20.03.13_5640d13b.jpg" alt="Detalle del tambor 7"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-20 a las 19.48.50_660c04c9.jpg" alt="Detalle del tambor 8"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-20 a las 19.50.04_23994b28.jpg" alt="Detalle del tambor 9"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-20 a las 19.50.05_483f9e43.jpg" alt="Detalle del tambor 10"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-20 a las 19.50.06_3dbfe30e.jpg" alt="Detalle del tambor 11"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-20 a las 19.52.28_b207dc32.jpg" alt="Detalle del tambor 12"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-20 a las 19.52.30_bbfd4ad6.jpg" alt="Detalle del tambor 13"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-20 a las 19.52.34_8313dec4.jpg" alt="Detalle del tambor 14"></div>
+            <div class="carousel-item"><img src="images/Imagen de WhatsApp 2025-09-25 a las 19.07.30_c076a8ba.jpg" alt="Detalle del tambor 15"></div>
+          </div>
+          <button class="carousel-btn next" id="carousel-next" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section id="nosotros" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Artesanía local</h3>
+            <p>Más de 20 años construyendo tambores con técnicas tradicionales y materiales sustentables.</p>
+          </div>
+          <div class="about-card">
+            <h3>Personalización</h3>
+            <p>Elige dimensiones, tipo de parche y acabado. Ajustes finos de afinación incluidos.</p>
+          </div>
+          <div class="about-card">
+            <h3>Garantía</h3>
+            <p>12 meses por defecto de fabricación y revisión gratuita durante el primer año.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Contacto & Cotizaciones</h2>
+        <p class="section-desc">Solicita una cotización o programar una visita al taller.</p>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" required minlength="2" />
+          </div>
+          <div class="form-row">
+            <label for="email">Correo</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Detalles (modelo, tamaño, acabado)</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <div class="form-row form-actions">
+            <button type="submit" class="btn-primary">Enviar solicitud</button>
+            <button type="reset" class="btn-ghost">Limpiar</button>
+          </div>
+          <div id="contact-feedback" class="feedback" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Black Art Drums</h4>
+        <p>Taller: Calle del Tambor 123, Ciudad | Tel: +52 55 1234 5678</p>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lun - Vie: 9:00 - 18:00</p>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Black Art Drums — Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Carrito Modal -->
+  <div class="modal-backdrop hidden" id="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h3 id="modal-title">Carrito</h3>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-footer">
+        <p>Total: <strong id="cart-total">MXN $0</strong></p>
+        <div class="modal-actions">
+          <button class="btn-primary" id="checkout-btn">Pagar</button>
+          <button class="btn-ghost" id="close-cart">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
